@@ -21,7 +21,7 @@ class AppSchema extends CakeSchema {
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false, 'key' => 'primary'),
 		'title' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'detail' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
-		'status_id' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 6, 'unsigned' => false, 'key' => 'index'),
+		'status_id' => array('type' => 'integer', 'null' => true, 'default' => '1', 'length' => 6, 'unsigned' => false, 'key' => 'index'),
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'updated' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'indexes' => array(
