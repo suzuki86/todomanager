@@ -14,7 +14,7 @@ foreach($todos as $todo) {
   echo '<td>' . $todo['Todo']['id'] . '</td>';
   echo '<td><a href="/todos/edit/' . $todo['Todo']['id'] . '">' . $todo['Todo']['title'] . '</a></td>';
   echo '<td>' . $todo['Todo']['detail'] . '</td>';
-  echo '<td>' . $todo['Todo']['status'] . '</td>';
+  echo '<td>' . $todo['Status']['label'] . '</td>';
   echo '<td>' . $todo['Todo']['created'] . '</td>';
   echo '<td>' . $todo['Todo']['updated'] . '</td>';
   echo '</tr>';

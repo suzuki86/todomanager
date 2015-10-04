@@ -2,16 +2,9 @@
 
 class TodosController extends AppController {
   public function index() {
+    $this->loadModel('Status');
     $todos = $this->Todo->find('all',
       array(
-        'fields' => array(
-          'Todo.id',
-          'Todo.title',
-          'Todo.detail',
-          'Todo.status',
-          'Todo.created',
-          'Todo.updated'
-        ),
         'order' => array(
           'Todo.id DESC'
         )
