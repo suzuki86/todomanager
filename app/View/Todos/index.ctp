@@ -12,7 +12,7 @@
 foreach($todos as $todo) {
   echo '<tr>';
   echo '<td>' . $todo['Todo']['id'] . '</td>';
-  echo '<td>' . $todo['Todo']['title'] . '</td>';
+  echo '<td><a href="/todos/edit/' . $todo['Todo']['id'] . '">' . $todo['Todo']['title'] . '</a></td>';
   echo '<td>' . $todo['Todo']['detail'] . '</td>';
   echo '<td>' . $todo['Todo']['status'] . '</td>';
   echo '<td>' . $todo['Todo']['created'] . '</td>';

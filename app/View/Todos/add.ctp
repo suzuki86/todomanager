@@ -1,3 +1,4 @@
+<a href="/todos"><?php echo __('Back to todo list'); ?></a>
 <div class="users form">
 <?php echo $this->Form->create('Todo'); ?>
 <?php

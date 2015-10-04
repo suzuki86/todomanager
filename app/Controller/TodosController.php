@@ -32,7 +32,7 @@ class TodosController extends AppController {
     }
   }
 
-  public function edit() {
+  public function edit($id = null) {
     $this->Todo->id = $id;
     if (!$this->Todo->exists()) {
       throw new NotFoundException(__('Invalid todo'));
