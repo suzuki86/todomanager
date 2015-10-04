@@ -4,7 +4,17 @@ class TodosController extends AppController {
   public function index() {
     $todos = $this->Todo->find('all',
       array(
-        'fields' => array('Todo.id', 'Todo.title', 'Todo.detail', 'Todo.created', 'Todo.updated')
+        'fields' => array(
+          'Todo.id',
+          'Todo.title',
+          'Todo.detail',
+          'Todo.status',
+          'Todo.created',
+          'Todo.updated'
+        ),
+        'order' => array(
+          'Todo.id DESC'
+        )
       )
     );
     $this->set('todos', $todos);
