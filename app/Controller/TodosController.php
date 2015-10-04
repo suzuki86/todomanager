@@ -1,6 +1,6 @@
 <?php
 
-class TodosController extends Appcontroller {
+class TodosController extends AppController {
   public function index() {
   }
 
