@@ -8,6 +8,11 @@ class TodosController extends AppController {
   }
 
   public function add() {
+    $this->loadModel('Status');
+    $this->set('statuses', $this->Status->find('list', array(
+      'fields' => array('id', 'label')
+    )));
+
     if ($this->request->is('post')) {
       $this->Todo->create();
       if ($this->Todo->save($this->request->data)) {
@@ -20,6 +25,7 @@ class TodosController extends AppController {
   }
 
   public function edit($id = null) {
+    $this->loadModel('Status');
     $this->Todo->id = $id;
     if (!$this->Todo->exists()) {
       throw new NotFoundException(__('Invalid todo'));
@@ -32,6 +38,9 @@ class TodosController extends AppController {
         $this->Flash->error(__('The todo could not be saved. Please, try again.'));
       }
     } else {
+      $this->set('statuses', $this->Status->find('list', array(
+        'fields' => array('id', 'label')
+      )));
       $this->request->data = $this->Todo->findById($id);
     }
   }
