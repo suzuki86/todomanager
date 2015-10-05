@@ -3,13 +3,7 @@
 class TodosController extends AppController {
   public function index() {
     $this->loadModel('Status');
-    $todos = $this->Todo->find('all',
-      array(
-        'order' => array(
-          'Todo.id DESC'
-        )
-      )
-    );
+    $todos = $this->Todo->getAllOpenTodos();
     $this->set('todos', $todos);
   }
 
