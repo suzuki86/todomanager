@@ -5,6 +5,7 @@
   <td>Title</td>
   <td>Detail</td>
   <td>Status</td>
+  <td>Duedate</td>
   <td>Created</td>
   <td>Updated</td>
 </tr>
@@ -15,6 +16,7 @@ foreach($todos as $todo) {
   echo '<td><a href="/todos/edit/' . $todo['Todo']['id'] . '">' . $todo['Todo']['title'] . '</a></td>';
   echo '<td>' . $todo['Todo']['detail'] . '</td>';
   echo '<td>' . $todo['Status']['label'] . '</td>';
+  echo '<td>' . $todo['Todo']['duedate'] . '</td>';
   echo '<td>' . $todo['Todo']['created'] . '</td>';
   echo '<td>' . $todo['Todo']['updated'] . '</td>';
   echo '</tr>';
