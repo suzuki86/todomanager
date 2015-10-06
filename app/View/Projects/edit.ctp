@@ -5,17 +5,17 @@
 <?php echo $this->Form->create('Project'); ?>
 <table>
   <tr>
-    <td>
+    <th>
       <?php echo __('Name'); ?>
-    </td>
+    </th>
     <td>
       <?php echo $this->Form->input('name', array('label' => false)); ?>
     </td>
   </tr>
   <tr>
-    <td>
+    <th>
       <?php echo __('Description'); ?>
-    </td>
+    </th>
     <td>
       <?php echo $this->Form->input('description', array('label' => false)); ?>
     </td>
