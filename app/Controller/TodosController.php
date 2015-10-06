@@ -8,6 +8,11 @@ class TodosController extends AppController {
   }
 
   public function add() {
+    $this->loadModel('Project');
+    $this->set('projects', $this->Project->find('list', array(
+      'fields' => array('id', 'name')
+    )));
+
     $this->loadModel('Status');
     $this->set('statuses', $this->Status->find('list', array(
       'fields' => array('id', 'label')
@@ -25,6 +30,11 @@ class TodosController extends AppController {
   }
 
   public function edit($id = null) {
+    $this->loadModel('Project');
+    $this->set('projects', $this->Project->find('list', array(
+      'fields' => array('id', 'name')
+    )));
+
     $this->loadModel('Status');
     $this->Todo->id = $id;
     if (!$this->Todo->exists()) {
