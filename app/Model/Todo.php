@@ -3,7 +3,7 @@
 App::uses('AppModel', 'Model');
 
 class Todo extends AppModel {
-  public $belongsTo = 'Status';
+  public $belongsTo = array('Project', 'Status');
   public $validate = array(
     'title' => array(
       'required' => array(

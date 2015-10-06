@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Meiryo';
+  color: #555555;
+}
+
+img {
+  border: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #eeeeee;
+  padding: 15px;
+}
+
+td {
+  border: 1px solid #eeeeee;
+  padding: 15px;
+}
+
+input {
+  padding: 8px;
+}
+
+textarea {
+  padding: 8px;
+}
+
+select {
+  padding: 5px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+#globalnavi {
+  background: #eeeeee;
+  padding: 15px;
+  text-align: right;
+  margin: 0 0 20px 0;
+}
+
+#globalnavi .contents{
+  width: 800px;
+  margin: 0 auto;
+}
+
+#application_name {
+  float: left;
+  font-weight: bold;
+}
+
+.primary_navi {
+  float: right;
+}
+
+#contents {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.operation_area {
+  margin: 0 0 20px 0;
+}
