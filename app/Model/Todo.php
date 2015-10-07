@@ -23,4 +23,11 @@ class Todo extends AppModel {
       )
     ));
   }
+
+  public function close($id = null) {
+    $todo_to_close = array(
+      'Todo' => array('id' => $id, 'status_id' => 2)
+    );
+    $this->save($todo_to_close, false);
+  }
 }
