@@ -18,6 +18,20 @@ class TodosController extends AppController {
       'fields' => array('id', 'label')
     )));
 
+    $duedate_options = array(
+      'label' => false,
+      'type' => 'datetime',
+      'timeFormat' => 24,
+      'dateFormat' => 'YMD',
+      'legend' => false,
+      'label' => false,
+      'div' => false,
+      'interval' => 1,
+      'monthNames' => false,
+      'class' => 'selectbox'
+    );
+    $this->set('duedate_options', $duedate_options);
+
     if ($this->request->is('post')) {
       $this->Todo->create();
       if ($this->Todo->save($this->request->data)) {

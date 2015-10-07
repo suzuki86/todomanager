@@ -28,6 +28,14 @@
       <?php echo $this->Form->input('detail', array('label' => false, 'class' => 'input_text')); ?>
     </td>
   </tr>
+  <tr>
+    <th>
+      <?php echo __('Duedate'); ?>
+    </th>
+    <td>
+      <?php echo $this->Form->input('duedate', $duedate_options); ?>
+    </td>
+  </tr>
 </table>
 <div class="submit_buttons">
   <?php echo $this->Form->end(__('Submit')); ?>
