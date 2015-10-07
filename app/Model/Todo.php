@@ -30,4 +30,10 @@ class Todo extends AppModel {
     );
     $this->save($todo_to_close, false);
   }
+
+  public function getOpenTodosCount() {
+    return $this->find('count', array(
+      'conditions' => array('Todo.status_id' => 1)
+    ));
+  }
 }

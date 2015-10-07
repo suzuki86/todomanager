@@ -9,6 +9,7 @@
     <div class="contents">
       <div id="application_name">TodoManager</div>
       <div class="primary_navi">
+        <a href="/"><?php echo __('Dashboard'); ?></a>
         <a href="/projects"><?php echo __('Projects'); ?></a>
         <a href="/todos"><?php echo __('Todos'); ?></a>
         <a href="/users"><?php echo __('Users'); ?></a>
