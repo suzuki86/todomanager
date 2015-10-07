@@ -61,6 +61,7 @@ class UsersController extends AppController {
   }
 
   public function login() {
+    $this->autoLayout = false;
     if ($this->request->is('post')) {
       if ($this->Auth->login()) {
         $this->redirect($this->Auth->redirect());
@@ -71,6 +72,7 @@ class UsersController extends AppController {
   }
 
   public function logout() {
+    $this->autoLayout = false;
     $this->redirect($this->Auth->logout());
   }
 }
