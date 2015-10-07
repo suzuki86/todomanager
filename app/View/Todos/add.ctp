@@ -3,7 +3,7 @@
 </div>
 <div class="users form">
 <?php echo $this->Form->create('Todo'); ?>
-<table>
+<table class="add_table">
   <tr>
     <th>
       <?php echo __('Project'); ?>
@@ -17,7 +17,7 @@
       <?php echo __('Title'); ?>
     </th>
     <td>
-      <?php echo $this->Form->input('title', array('label' => false)); ?>
+      <?php echo $this->Form->input('title', array('label' => false, 'class' => 'input_text')); ?>
     </td>
   </tr>
   <tr>
@@ -25,9 +25,11 @@
       <?php echo __('Detail'); ?>
     </th>
     <td>
-      <?php echo $this->Form->input('detail', array('label' => false)); ?>
+      <?php echo $this->Form->input('detail', array('label' => false, 'class' => 'input_text')); ?>
     </td>
   </tr>
 </table>
+<div class="submit_buttons">
   <?php echo $this->Form->end(__('Submit')); ?>
+</div>
 </div>

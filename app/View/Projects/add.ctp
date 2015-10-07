@@ -3,13 +3,13 @@
 </div>
 <div class="users form">
 <?php echo $this->Form->create('Project'); ?>
-<table>
+<table class="add_table">
   <tr>
     <th>
       <?php echo __('Name'); ?>
     </th>
     <td>
-      <?php echo $this->Form->input('name', array('label' => false)); ?>
+      <?php echo $this->Form->input('name', array('label' => false, 'class' => 'input_text')); ?>
     </td>
   </tr>
   <tr>
@@ -17,9 +17,11 @@
       <?php echo __('Description'); ?>
     </th>
     <td>
-      <?php echo $this->Form->input('description', array('label' => false)); ?>
+      <?php echo $this->Form->input('description', array('label' => false, 'class' => 'input_text')); ?>
     </td>
   </tr>
 </table>
-<?php echo $this->Form->end(__('Submit')); ?>
+<div class="submit_buttons">
+  <?php echo $this->Form->end(__('Submit')); ?>
+</div>
 </div>

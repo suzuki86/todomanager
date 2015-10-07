@@ -81,3 +81,27 @@ select {
 .operation_area {
   margin: 0 0 20px 0;
 }
+
+.add_table {
+  margin: 0 0 30px 0;
+}
+
+.edit_table {
+  margin: 0 0 30px 0;
+}
+
+.submit_buttons {
+  text-align: center;
+}
+
+.login_form {
+  padding: 100px 0 0 0;
+}
+
+.input_text {
+  width: 100%;
+}
+
+.form_descriptions {
+  margin: 0 0 30px 0;
+}

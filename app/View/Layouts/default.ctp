@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="/css/common.css" />
 </head>
 <body>
+  <?php if($this->action !== 'login') :?>
   <div id="globalnavi" class="clearfix">
     <div class="contents">
       <div id="application_name">TodoManager</div>
@@ -15,6 +16,7 @@
       </div>
     </div>
   </div>
+  <?php endif; ?>
   <div id="contents">
     <?php echo $this->fetch('content'); ?>
   </div>
