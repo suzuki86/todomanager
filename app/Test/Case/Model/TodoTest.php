@@ -62,4 +62,14 @@ class TodoTestCase extends CakeTestCase {
     );
     $this->assertEqual($actual, $expected);
   }
+
+  public function testErrorWhenTitleIsEmpty() {
+    $this->Todo->save(array(
+      'title' => '',
+      'detail' => '',
+      'project_id' => 1,
+      'status_id' => 1
+    ));
+    $this->assertNotEmpty($this->Todo->validationErrors);
+  }
 }
