@@ -10,6 +10,11 @@ class TodoTestCase extends CakeTestCase {
     $this->Todo = ClassRegistry::init('Todo');
   }
 
+  public function tearDown() {
+    unset($this->Todo);
+    parent::tearDown();
+  }
+
   public function testGetAllOpenTodos() {
     $actual = $this->Todo->getAllOpenTodos();
     $expected = array(
