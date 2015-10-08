@@ -9,7 +9,7 @@
       <?php echo __('Project'); ?>
     </th>
     <td>
-      <?php echo $this->Form->input('project_id', array('options' => $projects, 'empty' => __('Select Project'), 'label' => false, 'class' => 'selectbox')); ?>
+      <?php echo $this->Form->input('project_id', array('options' => $projects, 'empty' => false, 'label' => false, 'class' => 'selectbox')); ?>
     </td>
   </tr>
   <tr>
