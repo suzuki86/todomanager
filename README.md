@@ -6,6 +6,8 @@ This project is under development.
 
 This application allows you to manage your todos on browser. It is based on CakePHP.
 
+[![Build Status](https://travis-ci.org/suzuki86/todomanager.svg)](https://travis-ci.org/suzuki86/todomanager)
+
 # Installation
 
 1. Clone this repository and deploy to document root.
