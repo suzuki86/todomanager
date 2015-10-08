@@ -1,5 +1,6 @@
 <div class="operation_area">
   <a href="/todos/add">Add new todo</a>
+  <a href="/todos?filter=all">Show closed todos</a>
 </div>
 <table>
 <tr>

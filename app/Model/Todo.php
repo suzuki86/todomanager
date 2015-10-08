@@ -13,6 +13,14 @@ class Todo extends AppModel {
     )
   );
 
+  public function getAllTodos() {
+    return $this->find('all', array(
+      'order' => array(
+        'Todo.id DESC'
+      )
+    ));
+  }
+
   public function getAllOpenTodos() {
     return $this->find('all', array(
       'conditions' => array(

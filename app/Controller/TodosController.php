@@ -3,7 +3,14 @@
 class TodosController extends AppController {
   public function index() {
     $this->loadModel('Status');
-    $todos = $this->Todo->getAllOpenTodos();
+    if(
+      isset($this->request->query['filter'])
+      && $this->request->query['filter'] === 'all'
+    ) {
+      $todos = $this->Todo->getAllTodos();
+    } else {
+      $todos = $this->Todo->getAllOpenTodos();
+    }
     $this->set('todos', $todos);
   }
 
