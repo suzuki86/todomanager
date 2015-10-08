@@ -77,4 +77,10 @@ class TodoTestCase extends CakeTestCase {
     ));
     $this->assertNotEmpty($this->Todo->validationErrors);
   }
+
+  public function testTodosAreClosedAsExpected() {
+    $this->Todo->close(1);
+    $actual = $this->Todo->findById(1);
+    $this->assertEqual($actual['Todo']['status_id'], 2);
+  }
 }
