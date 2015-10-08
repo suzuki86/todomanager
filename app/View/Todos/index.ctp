@@ -1,5 +1,5 @@
 <div class="operation_area">
-  <a href="/todos/add">Add new task</a>
+  <a href="/todos/add">Add new todo</a>
 </div>
 <table>
 <tr>

@@ -22,6 +22,6 @@
   </tr>
 </table>
 <div class="submit_buttons">
-<?php echo $this->Form->end(__('Submit')); ?>
+  <?php echo $this->Form->end(__('Update')); ?>
 </div>
 </div>
