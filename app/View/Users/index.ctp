@@ -9,9 +9,9 @@
 </tr>
 <?php foreach($users as $user): ?>
 <tr>
-  <td><a href="/users/edit/<?php echo $user['User']['id']; ?>"><?php echo $user['User']['username']; ?></a></td>
-  <td><?php echo $user['User']['created']; ?></td>
-  <td><?php echo $user['User']['updated']; ?></td>
+  <td><a href="/users/edit/<?php echo h($user['User']['id']); ?>"><?php echo h($user['User']['username']); ?></a></td>
+  <td><?php echo h($user['User']['created']); ?></td>
+  <td><?php echo h($user['User']['updated']); ?></td>
 </tr>
 <?php endforeach; ?>
 </table>

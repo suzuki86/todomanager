@@ -13,16 +13,16 @@
 <?php foreach($todos as $todo): ?>
 <tr>
   <td>
-    <a href="/todos/edit/<?php echo $todo['Todo']['id']; ?>"><?php echo $todo['Todo']['title']; ?></a>
+    <a href="/todos/edit/<?php echo h($todo['Todo']['id']); ?>"><?php echo h($todo['Todo']['title']); ?></a>
   </td>
   <td>
-    <?php echo $todo['Project']['name']; ?>
+    <?php echo h($todo['Project']['name']); ?>
   </td>
   <td>
-    <?php echo $todo['Status']['label']; ?>
+    <?php echo h($todo['Status']['label']); ?>
   </td>
   <td>
-    <?php echo $todo['Todo']['duedate']; ?>
+    <?php echo h($todo['Todo']['duedate']); ?>
   </td>
   <td>
     <?php echo $this->Form->create('Todo', array('url' => '/todos/close')); ?>
