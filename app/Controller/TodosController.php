@@ -15,30 +15,6 @@ class TodosController extends AppController {
   }
 
   public function add() {
-    $this->loadModel('Project');
-    $this->set('projects', $this->Project->find('list', array(
-      'fields' => array('id', 'name')
-    )));
-
-    $this->loadModel('Status');
-    $this->set('statuses', $this->Status->find('list', array(
-      'fields' => array('id', 'label')
-    )));
-
-    $duedate_options = array(
-      'label' => false,
-      'type' => 'datetime',
-      'timeFormat' => 24,
-      'dateFormat' => 'YMD',
-      'legend' => false,
-      'label' => false,
-      'div' => false,
-      'interval' => 1,
-      'monthNames' => false,
-      'class' => 'selectbox'
-    );
-    $this->set('duedate_options', $duedate_options);
-
     if ($this->request->is('post')) {
       $this->Todo->create();
       if ($this->Todo->save($this->request->data)) {
@@ -47,6 +23,30 @@ class TodosController extends AppController {
       } else {
         $this->Flash->error(__('The todo could not be saved. Please, try again.'));
       }
+    } else {
+      $this->loadModel('Project');
+      $this->set('projects', $this->Project->find('list', array(
+        'fields' => array('id', 'name')
+      )));
+
+      $this->loadModel('Status');
+      $this->set('statuses', $this->Status->find('list', array(
+        'fields' => array('id', 'label')
+      )));
+
+      $duedate_options = array(
+        'label' => false,
+        'type' => 'datetime',
+        'timeFormat' => 24,
+        'dateFormat' => 'YMD',
+        'legend' => false,
+        'label' => false,
+        'div' => false,
+        'interval' => 1,
+        'monthNames' => false,
+        'class' => 'selectbox'
+      );
+      $this->set('duedate_options', $duedate_options);
     }
   }
 
