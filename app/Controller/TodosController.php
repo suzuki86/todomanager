@@ -1,6 +1,19 @@
 <?php
 
 class TodosController extends AppController {
+  private $duedate_options = array(
+    'label' => false,
+    'type' => 'datetime',
+    'timeFormat' => 24,
+    'dateFormat' => 'YMD',
+    'legend' => false,
+    'label' => false,
+    'div' => false,
+    'interval' => 1,
+    'monthNames' => false,
+    'class' => 'selectbox'
+  );
+
   public function index() {
     $this->loadModel('Status');
     if(
@@ -34,19 +47,7 @@ class TodosController extends AppController {
         'fields' => array('id', 'label')
       )));
 
-      $duedate_options = array(
-        'label' => false,
-        'type' => 'datetime',
-        'timeFormat' => 24,
-        'dateFormat' => 'YMD',
-        'legend' => false,
-        'label' => false,
-        'div' => false,
-        'interval' => 1,
-        'monthNames' => false,
-        'class' => 'selectbox'
-      );
-      $this->set('duedate_options', $duedate_options);
+      $this->set('duedate_options', $this->duedate_options);
     }
   }
 
@@ -69,19 +70,7 @@ class TodosController extends AppController {
         $this->Flash->error(__('The todo could not be saved. Please, try again.'));
       }
     } else {
-      $duedate_options = array(
-        'label' => false,
-        'type' => 'datetime',
-        'timeFormat' => 24,
-        'dateFormat' => 'YMD',
-        'legend' => false,
-        'label' => false,
-        'div' => false,
-        'interval' => 1,
-        'monthNames' => false,
-        'class' => 'selectbox'
-      );
-      $this->set('duedate_options', $duedate_options);
+      $this->set('duedate_options', $this->duedate_options);
       $this->set('statuses', $this->Status->find('list', array(
         'fields' => array('id', 'label')
       )));
