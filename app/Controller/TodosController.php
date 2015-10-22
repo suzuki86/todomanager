@@ -78,6 +78,12 @@ class TodosController extends AppController {
     }
   }
 
+  public function open() {
+    $autoRender = false;
+    $this->Todo->open($this->request->data['Todo']['id_to_open']);
+    $this->redirect('/todos');
+  }
+
   public function close() {
     $autoRender = false;
     $this->Todo->close($this->request->data['Todo']['id_to_close']);
