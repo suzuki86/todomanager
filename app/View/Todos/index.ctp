@@ -25,9 +25,15 @@
     <?php echo h($todo['Todo']['duedate']); ?>
   </td>
   <td>
-    <?php echo $this->Form->create('Todo', array('url' => '/todos/close')); ?>
-    <?php echo $this->Form->hidden('id_to_close', array('value' => $todo['Todo']['id'])); ?>
-    <?php echo $this->Form->end('Close'); ?>
+    <?php if($todo['Status']['label'] === 'open'): ?>
+      <?php echo $this->Form->create('Todo', array('url' => '/todos/close')); ?>
+      <?php echo $this->Form->hidden('id_to_close', array('value' => $todo['Todo']['id'])); ?>
+      <?php echo $this->Form->end('Close'); ?>
+    <?php else: ?>
+      <?php echo $this->Form->create('Todo', array('url' => '/todos/open')); ?>
+      <?php echo $this->Form->hidden('id_to_open', array('value' => $todo['Todo']['id'])); ?>
+      <?php echo $this->Form->end('Open'); ?>
+    <?php endif; ?>
   </td>
 </tr>
 <?php endforeach; ?>
