@@ -25,3 +25,11 @@ mysql -uUSERNAME -p todomanager < ./app/Config/seeds.sql
 - Set permission `0777` to `app/tmp`.
 
 - Now you can login username:root, password:root.
+
+# Testing
+
+Tests can be run as follows.
+
+```
+./app/Console/cake test app All
+```
