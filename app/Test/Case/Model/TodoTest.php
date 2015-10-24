@@ -15,7 +15,7 @@ class TodoTestCase extends CakeTestCase {
     parent::tearDown();
   }
 
-  public function testGetAllTodos() {
+  public function testGetAllTodosCount() {
     $actual = $this->Todo->getAllTodos();
     $expected = 3;
     $this->assertEqual(count($actual), $expected);
@@ -43,9 +43,29 @@ class TodoTestCase extends CakeTestCase {
     $this->assertEqual($actual['Todo']['status_id'], 2);
   }
 
+  public function testCloseReturnsFalseWhenNoIdIsPassed() {
+    $actual = $this->Todo->close();
+    $this->assertFalse($actual);
+  }
+
+  public function testCloseReturnsFalseWhenStrinIsPassed() {
+    $actual = $this->Todo->close("hello");
+    $this->assertFalse($actual);
+  }
+
   public function testTodoAreOpenedAsExpected() {
     $this->Todo->open(3);
     $actual = $this->Todo->findById(3);
     $this->assertEqual($actual['Todo']['status_id'], 1);
+  }
+
+  public function testOpenReturnsFalseWhenNoIdIsPassed() {
+    $actual = $this->Todo->open();
+    $this->assertFalse($actual);
+  }
+
+  public function testOpenReturnsFalseWhenStrinIsPassed() {
+    $actual = $this->Todo->open("hello");
+    $this->assertFalse($actual);
   }
 }

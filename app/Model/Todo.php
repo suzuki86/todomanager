@@ -33,6 +33,9 @@ class Todo extends AppModel {
   }
 
   public function open($id = null) {
+    if (!$id || !is_int($id)) {
+      return false;
+    }
     $todo_to_open = array(
       'Todo' => array('id' => $id, 'status_id' => 1)
     );
@@ -40,6 +43,9 @@ class Todo extends AppModel {
   }
 
   public function close($id = null) {
+    if (!$id || !is_int($id)) {
+      return false;
+    }
     $todo_to_close = array(
       'Todo' => array('id' => $id, 'status_id' => 2)
     );
