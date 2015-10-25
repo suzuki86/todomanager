@@ -20,4 +20,12 @@ class ProjectTestCase extends CakeTestCase {
     $expected = 2;
     $this->assertEqual(count($actual), $expected);
   }
+
+  public function testErrorWhenTitleIsEmpty() {
+    $this->Project->save(array(
+      'name' => '',
+      'description' => 'Test Description',
+    ));
+    $this->assertNotEmpty($this->Project->validationErrors);
+  }
 }
