@@ -1,6 +1,9 @@
 <?php
 
 class TodosController extends AppController {
+
+  public $uses = array('Todo', 'Status', 'Project');
+
   private $duedate_options = array(
     'label' => false,
     'type' => 'datetime',
@@ -15,7 +18,6 @@ class TodosController extends AppController {
   );
 
   public function index() {
-    $this->loadModel('Status');
     if(
       isset($this->request->query['filter'])
       && $this->request->query['filter'] === 'all'
@@ -37,12 +39,10 @@ class TodosController extends AppController {
         $this->Flash->error(__('The todo could not be saved. Please, try again.'));
       }
     } else {
-      $this->loadModel('Project');
       $this->set('projects', $this->Project->find('list', array(
         'fields' => array('id', 'name')
       )));
 
-      $this->loadModel('Status');
       $this->set('statuses', $this->Status->find('list', array(
         'fields' => array('id', 'label')
       )));
@@ -52,12 +52,10 @@ class TodosController extends AppController {
   }
 
   public function edit($id = null) {
-    $this->loadModel('Project');
     $this->set('projects', $this->Project->find('list', array(
       'fields' => array('id', 'name')
     )));
 
-    $this->loadModel('Status');
     $this->Todo->id = $id;
     if (!$this->Todo->exists()) {
       throw new NotFoundException(__('Invalid todo'));
