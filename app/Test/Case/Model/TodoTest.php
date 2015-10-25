@@ -61,6 +61,10 @@ class TodoTestCase extends CakeTestCase {
 
     $actual = $this->Todo->close('hello2');
     $this->assertFalse($actual);
+
+    // When invalid id passed.
+    $actual = $this->Todo->close(11111);
+    $this->assertFalse($actual);
   }
 
   public function testTodoAreOpenedAsExpected() {
@@ -86,6 +90,10 @@ class TodoTestCase extends CakeTestCase {
     $this->assertFalse($actual);
 
     $actual = $this->Todo->open('hello2');
+    $this->assertFalse($actual);
+
+    // When invalid id passed.
+    $actual = $this->Todo->open(11111);
     $this->assertFalse($actual);
   }
 }

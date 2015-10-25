@@ -36,6 +36,9 @@ class Todo extends AppModel {
     if (!preg_match('/^[0-9]+$/', $id)) {
       return false;
     }
+    if (!$this->hasAny(array('id' => $id))) {
+      return false;
+    }
     $todo_to_open = array(
       'Todo' => array('id' => $id, 'status_id' => 1)
     );
@@ -44,6 +47,9 @@ class Todo extends AppModel {
 
   public function close($id = null) {
     if (!preg_match('/^[0-9]+$/', $id)) {
+      return false;
+    }
+    if (!$this->hasAny(array('id' => $id))) {
       return false;
     }
     $todo_to_close = array(
