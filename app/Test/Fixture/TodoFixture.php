@@ -34,6 +34,16 @@ class TodoFixture extends CakeTestFixture {
       'duedate' => '2010-01-01 00:00:00',
       'created' => '2010-01-01 00:00:00',
       'updated' => '2010-01-01 00:00:00'
+    ),
+    array(
+      'id' => 4,
+      'project_id' => 2,
+      'title' => 'Test Todo 4',
+      'detail' => 'Test Todo Detail 4',
+      'status_id' => 2,
+      'duedate' => '2010-01-01 00:00:00',
+      'created' => '2010-01-01 00:00:00',
+      'updated' => '2010-01-01 00:00:00'
     )
   );
  }

@@ -33,7 +33,7 @@ class Todo extends AppModel {
   }
 
   public function open($id = null) {
-    if (!$id || !is_int($id)) {
+    if (!preg_match('/^[0-9]+$/', $id)) {
       return false;
     }
     $todo_to_open = array(
@@ -43,7 +43,7 @@ class Todo extends AppModel {
   }
 
   public function close($id = null) {
-    if (!$id || !is_int($id)) {
+    if (!preg_match('/^[0-9]+$/', $id)) {
       return false;
     }
     $todo_to_close = array(
