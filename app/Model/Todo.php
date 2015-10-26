@@ -53,7 +53,7 @@ class Todo extends AppModel {
       return false;
     }
     $todo_to_close = array(
-      'Todo' => array('id' => $id, 'status_id' => 2)
+      'Todo' => array('id' => $id, 'status_id' => 2, 'closed' => date('Y-m-d H:i:s'))
     );
     $this->save($todo_to_close, false);
   }
