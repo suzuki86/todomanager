@@ -17,7 +17,7 @@ class TodoTestCase extends CakeTestCase {
 
   public function testGetAllTodosCount() {
     $actual = $this->Todo->getAllTodos();
-    $expected = 4;
+    $expected = 5;
     $this->assertEqual(count($actual), $expected);
   }
 
@@ -95,5 +95,10 @@ class TodoTestCase extends CakeTestCase {
     // When invalid id passed.
     $actual = $this->Todo->open(11111);
     $this->assertFalse($actual);
+  }
+
+  public function testGetClosedTodosCount() {
+    $actual = $this->Todo->getClosedTodosCount(5);
+    $this->assertEquals(1, $actual);
   }
 }
